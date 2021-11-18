@@ -1,1 +1,9 @@
 /* Cat organ! */
+body {
+  height: 100vh;
+  background-image: url("../img/bg.png");
+  background-repeat: repeat;
+  background-position: left top;
+  padding: 32px;
+  box-sizing: border-box;
+}
