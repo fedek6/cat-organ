@@ -8,4 +8,30 @@ body {
   box-sizing: border-box;
 
   font-family: 'VT323', monospace;
+  color: Black;
+}
+
+
+/* Info */
+#info {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  display: inline-block;
+
+  background-color: white;
+  border: 1px solid Black;
+
+  padding: .5em 1em;
+
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+}
+
+#info a {
+  color: Black;
+}
+
+#info a:hover {
+  color: red;
+  text-decoration: none;
 }
