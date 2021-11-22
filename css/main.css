@@ -4,13 +4,24 @@ body {
   background-image: url("../img/bg.png");
   background-repeat: repeat;
   background-position: left top;
-  padding: 32px;
+
+  padding: 5% 32px 32px 32px;
+
   box-sizing: border-box;
 
   font-family: 'VT323', monospace;
   color: Black;
+
+  /* Center horizontally */
+  display: flex;
+  justify-content: center;
 }
 
+.shadow {
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+  background-color: white;
+  border: 1px solid Black;
+}
 
 /* Info */
 #info {
@@ -19,12 +30,7 @@ body {
   bottom: 32px;
   display: inline-block;
 
-  background-color: white;
-  border: 1px solid Black;
-
   padding: .5em 1em;
-
-  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
 }
 
 #info a {
@@ -34,4 +40,49 @@ body {
 #info a:hover {
   color: red;
   text-decoration: none;
+}
+
+/* Main */
+main {
+  /* border: solid 1px Red; */
+
+  width: 66vw;
+  height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  row-gap: 16px;
+}
+
+/* Logo header */
+#main-header {
+  flex-basis: 20%;
+}
+
+#main-header > img {
+  height: 100%;
+  width: auto;
+}
+
+/* Container with a cats and keys */
+main > div {
+  flex-grow: 1;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+/* Cats */
+#cats {
+  flex-grow: 1;
+}
+
+#keys {
+  /* height: 30%; */
+  flex-basis: 30%;
 }
