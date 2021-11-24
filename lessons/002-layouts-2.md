@@ -75,7 +75,7 @@ Emmet:
 }
 ```
 
-## Poisition cat rows
+## Position cat rows
 
 ```css
 #cats {
