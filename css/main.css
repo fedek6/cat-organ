@@ -78,9 +78,73 @@ main > div {
 /* Cats */
 #cats {
   flex-grow: 1;
+  position: relative;
+
+  width: 100%;
 }
 
 #keys {
   /* height: 30%; */
   flex-basis: 30%;
+}
+
+/* Cat choir */
+.cat-choir {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+/* Cat component */
+.cat-choir > li {
+  list-style: none;
+
+  width: 86px;
+  height: 118px;
+
+  background-image: url("../img/cat-spritesheet-001.png");
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  background-size: auto 100%;
+
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.cat-choir > .-black-cat {
+  background-image: url("../img/cat-spritesheet-002.png");
+}
+
+.cat-choir > .-animate {
+  animation-name: cat-singing;
+  animation-duration: .6s;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
+}
+
+@keyframes cat-singing {
+  from {
+    background-position: 0 center;
+  }
+  to {
+    background-position: -172px center;
+  }
+}
+
+/* Cat row */
+.cat-row {
+  position: absolute;
+  width: 100%;
+}
+
+.cat-row.-lower {
+  bottom: 0;
+  z-index: 1;
+}
+
+.cat-row.-upper {
+  bottom: 64px;
+  z-index: 0;
 }
