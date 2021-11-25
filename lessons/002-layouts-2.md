@@ -2,6 +2,8 @@
 
 ## Add cats row no 1
 
+12 cats because there are 12 notes in one octave.
+
 * use modifiers.
 
 Emmet:
@@ -70,7 +72,7 @@ Emmet:
   image-rendering: crisp-edges;
 }
 
-.cat-choir > .-cat-02 {
+.cat-choir > .-black {
   background-image: url("../img/cat-002.png");
 }
 ```
@@ -100,3 +102,52 @@ Emmet:
 }
 ```
 
+## Animate cat
+
+172px for sprite animation because it's sprite width.
+
+```css
+.cat-choir > li {
+  ...
+  background-image: url("../img/cat-spritesheet-001.png");
+  ...
+}
+
+.cat-choir > .-black-cat {
+  ...
+  background-image: url("../img/cat-spritesheet-002.png");
+  ...
+}
+
+.cat-choir > .-animate {
+  animation-name: cat-singing;
+  animation-duration: .6s;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
+}
+
+@keyframes cat-singing {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -172px;
+  }
+}
+```
+
+> Note: you can omit `from` declaration.
+
+## Test cat` animation
+
+```html
+        <div class="cat-row -upper">
+          <ul class="cat-choir">
+            <li class="-black-cat -animate"></li>
+            <li></li>
+            <li></li>
+            <li class="-animate"></li>
+            <li></li>
+          </ul>
+        </div>
+```
