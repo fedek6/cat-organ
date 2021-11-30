@@ -85,7 +85,8 @@ main > div {
 
 #keys {
   /* height: 30%; */
-  flex-basis: 30%;
+  flex-basis: 50%;
+  width: 100%;
 }
 
 /* Cat choir */
@@ -94,6 +95,9 @@ main > div {
   flex-direction: row;
   justify-content: center;
   flex-wrap: nowrap;
+
+  padding: 0;
+  margin: 0;
 }
 
 /* Cat component */
@@ -147,4 +151,77 @@ main > div {
 .cat-row.-upper {
   bottom: 64px;
   z-index: 0;
+}
+
+/* Keyboard */
+.keyboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: stretch;
+
+  height: 100%;
+
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+
+  border-top: solid 2px black;
+
+  position: relative;
+}
+
+.keyboard > li {
+  flex: 1 1 auto;
+}
+
+.keyboard > .-active,
+.keyboard > li:active {
+  background-image: url("../img/black-shadow.png");
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+.keyboard > li ~ li {
+  border-left: solid 2px Black;
+}
+
+.keyboard > .-sharp-flat {
+  height: 60%;
+  background-color: black;
+  width: calc(100% / 14);
+  display: block;
+  position: absolute;
+
+  border: none;
+
+  transform: scaleY(-1);
+}
+
+.keyboard > .-sharp-flat.-active,
+.keyboard > .-sharp-flat:active {
+  background-position: left top;
+}
+
+/* Each black key position */
+.keyboard > li:nth-of-type(2) {
+  left: calc((100% / 7) - (100% / 14) / 2);
+}
+
+.keyboard > li:nth-of-type(4) {
+  left: calc(2 * (100% / 7) - (100% / 14) / 2);
+}
+
+.keyboard > li:nth-of-type(7) {
+  left: calc(4 * (100% / 7) - (100% / 14) / 2);
+}
+
+.keyboard > li:nth-of-type(9) {
+  left: calc(5 * (100% / 7) - (100% / 14) / 2);
+}
+
+.keyboard > li:nth-of-type(11) {
+  left: calc(6 * (100% / 7) - (100% / 14) / 2);
 }
