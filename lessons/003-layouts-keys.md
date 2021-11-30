@@ -152,3 +152,19 @@ calc(2 * (100% / 7) - (100% / 14) / 2);
   background-position: left top;
 }
 ```
+
+## Add notes to cats & keys
+
+```html
+
+        <ul class="keyboard">
+          <li data-note="C"></li>
+          <li class="-sharp-flat" data-note="C#"></li>
+        </ul>
+```
+
+```html
+          <ul class="cat-choir">
+            <li class="-black-cat" data-note="C"></li>
+            <li class="-black-cat" data-note="C#"> </li>
+```
