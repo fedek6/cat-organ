@@ -1,29 +1,31 @@
 const keys = document.querySelector("#keys");
 const cats = document.querySelector("#cats");
 
-const pitchMap = {
-  "C": 1,
-  "D": 4,
-  "E": 6,
-  "F": 4,
-  "G": 5,
-  "A": 6,
-  "B": 7,
-  "Cf": 1.5,
-  "Df": 2.5,
-  "Ff": 4.5,
-  "Gf": 5.5,
-  "Af": 6.5
-};
+const sampler = new Tone.Sampler({
+  urls: {
+    C0: "meow.mp3"
+  },
+  release: 1,
+  baseUrl: "../assets/"
+}).toDestination();
 
-const playNote = (note) => {
-  const meow = new Audio("../assets/meow.mp3");
 
-  if (pitchMap[note]) {
-    meow.playbackRate = pitchMap[note];
+const translateNote = (note) => {
+  let noteForSampler = note;
+
+  if (note[1] == "f") {
+    noteForSampler = note[0] + "#";
   }
 
-  meow.play();
+  return `${noteForSampler}0`;
+}
+
+const playNote = (note) => {
+  sampler.triggerAttack(translateNote(note));
+}
+
+const stopNote = (note) => {
+  sampler.triggerRelease(translateNote(note));
 }
 
 /*
@@ -148,6 +150,7 @@ document.addEventListener("keyup", (e) => {
 
       toggleCat(note, false);
       toggleKey(note, false);
+      stopNote(note);
 
       console.log("Key depressed", code);
       console.timeEnd(code);
