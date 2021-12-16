@@ -162,21 +162,6 @@ const pitchMap = {
 Add an audio function:
 
 ```js
-const pitchMap = {
-  "C": 1,
-  "D": 2,
-  "E": 3,
-  "F": 4,
-  "G": 5,
-  "A": 6,
-  "B": 7,
-  "Cf": 1.5,
-  "Df": 2.5,
-  "Ff": 4.5,
-  "Gf": 5.5,
-  "Af": 6.5
-};
-
 const playNote = (note) => {
   const meow = new Audio("../assets/meow.mp3");
 
