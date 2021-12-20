@@ -36,3 +36,7 @@ const stopNote = (note) => {
   sampler.triggerRelease(translateNote(note));
 }
 ```
+
+## Let's talk about Markdown
+
+[here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
