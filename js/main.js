@@ -53,6 +53,8 @@ keys.addEventListener("mousedown", (e) => {
   // const target = e.target; the same!
   const { target } = e;
 
+  e.stopPropagation();
+
   if (target.matches("li.key")) {
     const { note } = target.dataset;
 
@@ -63,10 +65,11 @@ keys.addEventListener("mousedown", (e) => {
   }
 });
 
-document.addEventListener("mouseup", () => {
+document.addEventListener("mouseup", (e) => {
   const allCats = [...cats.querySelectorAll("li")];
 
   console.log("Muting down all cats");
+
   allCats.map((elm) => {
     elm.classList.remove("-animate");
   });
@@ -130,7 +133,7 @@ document.addEventListener("keydown", (e) => {
       playNote(note);
 
       console.log("Note played", note);
-      console.log("Key pressed", code);
+      // console.log("Key pressed", code);
 
       console.time(code);
     }
@@ -152,7 +155,7 @@ document.addEventListener("keyup", (e) => {
       toggleKey(note, false);
       stopNote(note);
 
-      console.log("Key depressed", code);
+      // console.log("Key depressed", code);
       console.timeEnd(code);
     }
 

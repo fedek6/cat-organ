@@ -123,7 +123,7 @@ main > div {
 
 .cat-choir > .-animate {
   animation-name: cat-singing;
-  animation-duration: .6s;
+  animation-duration: .25s;
   animation-timing-function: steps(2);
   animation-iteration-count: infinite;
 }
