@@ -1,12 +1,17 @@
 const keys = document.querySelector("#keys");
 const cats = document.querySelector("#cats");
 
+const reIndex = /[a-z]+.html$/;
+const assetsUrl = window.location.href.replace(reIndex, "") + "assets/";
+
+console.log("%cUsing assets location:", "color: Red", assetsUrl);
+
 const sampler = new Tone.Sampler({
   urls: {
     C0: "meow.mp3",
   },
   relase: 1,
-  baseUrl: "../assets/",
+  baseUrl: assetsUrl,
 }).toDestination();
 
 const translateNote = (note, octave = 0) => {
