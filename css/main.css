@@ -191,7 +191,7 @@ main > div {
 .keyboard > .-sharp-flat {
   height: 60%;
   background-color: black;
-  width: calc(100% / 14);
+  width: calc(100% / 18);
   display: block;
   position: absolute;
 
@@ -207,21 +207,25 @@ main > div {
 
 /* Each black key position */
 .keyboard > li:nth-of-type(2) {
-  left: calc((100% / 7) - (100% / 14) / 2);
+  left: calc((100% / 9) - (100% / 18) / 2);
 }
 
 .keyboard > li:nth-of-type(4) {
-  left: calc(2 * (100% / 7) - (100% / 14) / 2);
+  left: calc(2 * (100% / 9) - (100% / 18) / 2);
 }
 
 .keyboard > li:nth-of-type(7) {
-  left: calc(4 * (100% / 7) - (100% / 14) / 2);
+  left: calc(4 * (100% / 9) - (100% / 18) / 2);
 }
 
 .keyboard > li:nth-of-type(9) {
-  left: calc(5 * (100% / 7) - (100% / 14) / 2);
+  left: calc(5 * (100% / 9) - (100% / 18) / 2);
 }
 
 .keyboard > li:nth-of-type(11) {
-  left: calc(6 * (100% / 7) - (100% / 14) / 2);
+  left: calc(6 * (100% / 9) - (100% / 18) / 2);
+}
+
+.keyboard > li:nth-of-type(14) {
+  left: calc(8 * (100% / 9) - (100% / 18) / 2);
 }
